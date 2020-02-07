@@ -2,14 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 Created on 04/02/2020
-
 @author: zhouxuan
-
 """
 
 import itchat
 from itchat.content import *
-import time
+import time, os
 
 
 def msg_handler(msg):
@@ -22,8 +20,10 @@ def msg_handler(msg):
     elif msg['Type'] == 'Sharing':
         wx_text = msg['FileName']+': '+ msg['Url']
     else:
-        msg['Text']('\\temp\\'+msg['FileName'])
-        wx_text = '\\temp\\'+msg['FileName']
+#        msg['Text']('\\temp\\'+msg['FileName'])
+#        wx_text = '\\temp\\'+msg['FileName']
+        msg['Text'](os.path.join('temp',msg['FileName']))
+        wx_text = os.path.join('temp',msg['FileName'])
         
     wx_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(int(msg['CreateTime'])))
     
