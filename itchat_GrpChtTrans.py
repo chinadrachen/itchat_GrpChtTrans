@@ -73,6 +73,6 @@ emo = ['[微笑]','[撇嘴]','[色]','[发呆]','[得意]','[害羞]','[闭嘴]'
 dax_grps = [u'DAX全德学生群', u'DAX信息1群', u'DAX信息2群', u'DAX群', u'DAX爱国群']
 old_msg = ''
 
-itchat.auto_login(enableCmdQR=True,hotReload = True)
+itchat.auto_login(hotReload = True,enableCmdQR=True)
 itchat.get_chatrooms(update=True)
 itchat.run()
