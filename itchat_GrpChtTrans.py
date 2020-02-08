@@ -22,8 +22,10 @@ def msg_handler(msg):
     else:
 #        msg['Text']('\\temp\\'+msg['FileName'])
 #        wx_text = '\\temp\\'+msg['FileName']
-        msg['Text'](os.path.join('temp',msg['FileName']))
-        wx_text = os.path.join('temp',msg['FileName'])
+        msg['Text']('/root/itchat_GrpChtTrans/temp/'+msg['FileName'])
+        wx_text = '/root/itchat_GrpChtTrans/temp/'+msg['FileName']
+#        msg['Text'](os.path.join('temp',msg['FileName']))
+#        wx_text = os.path.join('temp',msg['FileName'])
         
     wx_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(int(msg['CreateTime'])))
     
